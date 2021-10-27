@@ -3,9 +3,15 @@ package com.javamongodb.workshop.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="user") //@Document e @Id para indicar que se trata de uma coleção do MongoDB
+//senao usar o (collection) (opcional) é pego automaticamente o nome da classe User de forma minuscula.
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@Id	
 	private String id;
 	private String name;
 	private String email;
