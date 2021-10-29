@@ -25,4 +25,8 @@ public class PostService {
 	public List<Post> findALL(){
 		return postRepository.findAll();
 	}
+	
+	public List<Post> findByTitle(String text){
+		return postRepository.findByTitleContainingIgnoreCase(text);
+	}
 }
